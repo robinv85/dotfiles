@@ -6,7 +6,7 @@
 #
 # ================================================================== #
 
-echo 'loading ~/.profile'
+#echo 'loading ~/.profile'
 
 # -----
 # PATH
@@ -14,5 +14,9 @@ echo 'loading ~/.profile'
 
 PATH=$PATH:/Applications/VirtualBox.app/Contents/MacOS
 export PATH
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/bin:$PATH" 
+
+# Put rbenv in PATH if installed
+if [ -f ~/.rbenv ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi

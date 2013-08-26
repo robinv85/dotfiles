@@ -6,7 +6,7 @@
 #
 # ================================================================== #
 
-echo "Loading ~/.bash_profile"
+#echo "Loading ~/.bash_profile"
 
 # Get environment variables
 if [ -f ~/.profile ]; then
