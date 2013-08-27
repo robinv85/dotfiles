@@ -13,6 +13,7 @@
 
 #echo 'loading ~/.bashrc'
 
+
 # -------
 # Common
 # -------
@@ -21,6 +22,7 @@ alias c='clear'
 alias h='history'
 alias pre='open -a Preview'
 
+
 # ---------------------
 # Changing directories
 # ---------------------
@@ -28,23 +30,26 @@ alias pre='open -a Preview'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
+alias .....='cd ../../../..'
+
 
 # -----------
 # ls helpers
 # -----------
 
-# Detect which OS and ovverride default with color output
+# Detect which OS and ovverride default ls with colored output
 if ls --color > /dev/null 2>&1; then # GNU `ls`
   alias ls='ls --color'
 else # OS X `ls`
   alias ls='ls -G'
 fi
-# alias ls='ls ${colorflag}'	# Override default ls with color output
+
 alias lx='ls -lXB'	        	# Sort by extension
 alias lk='ls -lSr'	        	# Sort by size, biggest last
 alias ll='ls -la'	          	# Long listing format
-alias lm='ll | more'	      	# pipe through 'more'
+alias lm='ll | more'	      		# pipe through 'more'
 alias la='ll -a'	          	# show hidden
+
 
 # -----------
 #
@@ -83,9 +88,18 @@ alias gd='git diff'
 alias gf='git fetch'
 alias gl='git log'
 alias gh='github'
+
+#git log oneline, including author
+function glpn() {
+  git log --pretty=format:"%h %ai %an"$'\t'"%s" "$@" | expand
+  echo ''
+}
+
 alias gi='vi .gitignore'
 alias gps='git push'
 alias gpl='git pull'
+alias gsm='git submodule'
+
 
 # ---------------
 # Sublime Text 2

@@ -20,8 +20,14 @@ dir=`pwd`
 dotfiles="bashrc profile bash_profile vimrc osx"
 
 # Create symlinks
-# ---------------
+link_dots() {
+  echo "Linking dotfiles"
+  for file in $dotfiles; do
+    ln -s -i -v $dir/$file ~/.$file
+  done
+}
 
-for file in $dotfiles; do
-  ln -s -i -v $dir/$file ~/.$file
-done
+# TODO : setup git
+
+link_dots
+

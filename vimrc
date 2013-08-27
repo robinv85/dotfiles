@@ -1,6 +1,4 @@
-" vim:fdm=marker1
 
-" Editor {{{
 set nocompatible	" Use Vim defaults
 "set background=dark
 set history=1000	" :cmdline history
@@ -11,10 +9,9 @@ set visualbell		" No sounds
 set autoread		" Reload files changed outside vim
 set hidden		" Buffers can exist in background without being in window
 syntax on		" Enable syntax highlighting
-set showcmd   "Show (partial) command as it's being typed
-" }}}
-
-" Text editing defaults {{{
+set showcmd  		" Show (partial) command as it's being typed
+set number		" Line numbers are good
+set history=1000	" Lots of :cmdline history
 set autoindent
 set smartindent
 set smarttab
@@ -36,35 +33,11 @@ set linebreak		" Wrap lines at convenient points
 set foldmethod=indent	" Fold based on indent
 set foldnestmax=3	" Deepest fold is 3 levels
 set nofoldenable	" Don't fold by default
-" }}}
 
-" Mouse {{{
-set mouse=a " Enable mouse in all modes
+" Mouse
+set mouse=a		" Enable mouse in all modes
 set ttyfast
-" }}}
 
-" Keyboard shortcuts {{{
-
-" }}}
-
-" GUI Vim {{{
-set cursorline  "Highlight current line
-set hlsearch  " Highlight searches
-set laststatus=2  " Always show status line
-" }}}
-
-" Colors {{{
-
-" }}}
-
-" Security {{{
-
-" }}}
-
-" Tmux {{{
-
-" }}}
-
-" Whitespace hints {{{
-
-" }}}
+set cursorline  	" Highlight current line
+set hlsearch  		" Highlight searches
+set laststatus=2  	" Always show status line}
