@@ -1,17 +1,15 @@
-filetype off
-set nocompatible	" Use Vim defaults
+" Vim settings
+set nocompatible	" Use Vim defaults, must be first
 
-" Vundle init
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+" Load Vundle plugins 
+if filereadable(expand("~/.vim/vundles.vim"))
+  source ~/.vim/vundles.vim
+endif
 
-" Let Vundle manage Vundle (required!)
-Bundle 'gmarik/vundle'
+set t_CO=256		" Enable 256 colors
+set colorscheme=solarized
+set background=dark
 
-" Bundles 
-
-
-"set background=dark
 set history=1000	" :cmdline history
 set showcmd		" show incomplete commands
 set showmode		" show current mode
@@ -55,4 +53,3 @@ set cursorline  	" Highlight current line
 set hlsearch  		" Highlight searches
 set laststatus=2  	" Always show status line
 
-set t_Co=256		" Enable 256 colors
