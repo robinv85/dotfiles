@@ -2,7 +2,7 @@ Dotfiles
 ========
 
 My OS X & \*nix configuration settings. 
-Disclaimer: I'm still learning git, and I'm fairly new to OS X and Linux/Unix so this repo is still heavily under construction, use at your own risk (careful with overwriting files)
+I'm still learning git, and I'm fairly new to OS X and Linux/Unix so this repo is still under construction, use at your own risk (careful with overwriting files)
 
 Todo
 -----
@@ -35,5 +35,4 @@ Inspired by ODT (Other People's Dotfiles) and some articles
 * [Yan Pritzker's dotfiles](https://github.com/skwp/dotfiles)
 * [Holman](https://github.com/holman/dotfiles)
 * ["Cowboy" Ben Alman's dotfiles](https://github.com/cowboy/dotfiles)
-
 
