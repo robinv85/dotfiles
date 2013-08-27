@@ -1,5 +1,16 @@
-
+filetype off
 set nocompatible	" Use Vim defaults
+
+" Vundle init
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+" Let Vundle manage Vundle (required!)
+Bundle 'gmarik/vundle'
+
+" Bundles 
+
+
 "set background=dark
 set history=1000	" :cmdline history
 set showcmd		" show incomplete commands
@@ -12,6 +23,8 @@ syntax on		" Enable syntax highlighting
 set showcmd  		" Show (partial) command as it's being typed
 set number		" Line numbers are good
 set history=1000	" Lots of :cmdline history
+
+" Indentation
 set autoindent
 set smartindent
 set smarttab

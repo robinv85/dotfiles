@@ -8,10 +8,8 @@
 
 #echo 'loading ~/.profile'
 
-# -----
-# PATH
-# -----
 
+# PATH
 PATH=$PATH:/Applications/VirtualBox.app/Contents/MacOS
 export PATH
 
@@ -20,3 +18,4 @@ if [ -f ~/.rbenv ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
+
