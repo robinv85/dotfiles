@@ -7,13 +7,13 @@ Todo: group into folders, improve installer, put editor preferences into editorc
 Installation
 ------------
 
-Clone this repo anywhere, e.g. to ~/dotfiles, then run install.sh and the following files are automatically symlinked into your $HOME directory.
+Clone this repo anywhere, e.g. to ~/dots, then run install.sh and the following files are automatically symlinked into your $HOME directory.
 
-    *.profile
-    *.bash_profile
-    *.bashrc
-    *.vimrc
-    *.osx
+    .profile
+    .bash_profile
+    .bashrc
+    .vimrc
+    .osx
 
 
 
