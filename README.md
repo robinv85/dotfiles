@@ -2,7 +2,7 @@ Dotfiles
 ========
 
 My OS X & \*nix configuration settings. 
-Still under construction, use at your own risk (careful with overwriting files)
+Disclaimer: I'm still learning git, and I'm fairly new to OS X and Linux/Unix so this repo is still heavily under construction, use at your own risk (careful with overwriting files)
 
 Todo
 -----
