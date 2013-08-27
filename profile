@@ -10,8 +10,9 @@
 
 
 # PATH
+# ----
+
 PATH=$PATH:/Applications/VirtualBox.app/Contents/MacOS
-export PATH
 
 # Put rbenv in PATH if installed
 if [ -f ~/.rbenv ]; then
@@ -19,3 +20,15 @@ if [ -f ~/.rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
+#put $HOME/bin and its subdirectories in PATH (ignores */.git/* so you can safely throw submodules in here):
+if [[ -d ~/bin ]] ; then
+    currentIFS=$IFS; IFS=$'\n'
+
+    for d in $(find ~/bin -type d -a \! -wholename '*/.git/*'); do
+        PATH="$d:$PATH"
+    done
+    
+    IFS="$currentIFS"; unset currentIFS
+fi
+
+export PATH
