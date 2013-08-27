@@ -9,7 +9,7 @@ Todo
 
 * Group into folders
 * Figure out vim bundles / git submodules
-* improve installer: differens OS's, protect overwriting files, make backup
+* improve installer: different OS's, protect overwriting files, make backup
 * put editor preferences into editorconfig..
 
 Installation
