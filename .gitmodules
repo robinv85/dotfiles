@@ -1,3 +1,7 @@
-[submodule "vim/colors"]
-	path = vim/colors
+
+[submodule "gruvbox"]
+	path = vim/colors/gruvbox
+	url = https://github.com/morhetz/gruvbox
+[submodule "vim-distinguished"]
+	path = vim/colors/vim-distinguished
 	url = https://github.com/tpope/vim-vividchalk
