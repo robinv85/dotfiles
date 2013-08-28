@@ -17,7 +17,7 @@ cd "$(dirname "${BASH_SOURCE}")"
 dir=`pwd`
 
 # List of files & folder to symlink
-list="bashrc profile bash_profile vim osx"
+list="bashrc profile bash_profile vim vimrc osx"
 
 # Create symlinks
 link_dots() {
@@ -33,13 +33,14 @@ link_dots() {
     fi
     ln -F -s -v $dir/$item ~/.$item
   done
-  mv ~/.vim/vimrc ~/.vimrc 
 }
 
-# TODO : improve symlinking : either move files like .vimrc out of subfolder, or use a solution like Holman's dotfiles with .symlink extensions, or...
-
+# TODO : improve symlinking & file structure e.g. using .symlink extension
 # TODO : setup ( install & config: git, ruby, node )
 # TODO : create command with options: overwrite, backup, uninstall, update
 
 link_dots
+
+# Install vim bundles via Vundle
+vim +BundleInstall +qall
 

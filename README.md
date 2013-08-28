@@ -8,7 +8,7 @@ Todo
 -----
 
 * Group into folders
-* Figure out vim bundles / git submodules
+* Figure out Vim bundles / submodules (added Vundle as submodule, and run bundle install from the bootstrap script, manage plugins within vim/vundles.vim)
 * Improve installer: different OS's, protect overwriting files, make backup, uninstall, bash commands
 * put editor preferences into editorconfig..
 
@@ -31,8 +31,8 @@ Inspired by ODT (Other People's Dotfiles) and some articles
 
 * [Github does dotfiles](http://dotfiles.github.io/) and [@octodots](http://www.twitter.com/octodots) on Twitter
 * [Mathias Bynens' dotfiles](https://github.com/mathiasbynens/dotfiles)
-* [Nicolas Galagher's dotfiles](https://github.com/necolas/dotfiles)
+* [Nicolas Gallagher's dotfiles](https://github.com/necolas/dotfiles)
 * [Yan Pritzker's dotfiles](https://github.com/skwp/dotfiles)
-* [Holman](https://github.com/holman/dotfiles)
+* [Holman does dotfiles](https://github.com/holman/dotfiles)
 * ["Cowboy" Ben Alman's dotfiles](https://github.com/cowboy/dotfiles)
 

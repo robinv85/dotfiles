@@ -7,8 +7,8 @@ if filereadable(expand("~/.vim/vundles.vim"))
 endif
 
 set t_CO=256		" Enable 256 colors
-set colorscheme=solarized
-set background=dark
+"set colorscheme=solarized
+"set background=dark
 
 set history=1000	" :cmdline history
 set showcmd		" show incomplete commands
