@@ -6,9 +6,10 @@ if filereadable(expand("~/.vim/vundles.vim"))
   source ~/.vim/vundles.vim
 endif
 
-set t_CO=256		" Enable 256 colors
-"set colorscheme=solarized
-"set background=dark
+set t_Co=256		" Enable 256 colors
+"set g:solarized_termcolors=256
+colorscheme hybrid 
+set background=dark
 
 set history=1000	" :cmdline history
 set showcmd		" show incomplete commands
