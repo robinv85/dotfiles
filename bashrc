@@ -3,15 +3,11 @@
 # ~/.bashrc 
 #
 # Bash-specific settings 
-# For interactive non-login shell
+# For interactive non-login shells
 #
 # ================================================================== #
 
 echo "Loading bashrc"
-
-# Source  bash_prompt
-#[ -r "~/.bash_prompt" ] && . ~/.bash_prompt
-[ -f "~/.bash_prompt" ] && . ~/.bash_prompt
 
 # ================================================================== #
 # Aliases

@@ -6,16 +6,8 @@
 #
 # ================================================================== #
 
-# Get environment variables
-if [ -f ~/.profile ]; then
- . ~/.profile; 
-fi
-
-# Get bash-only presets
-if [ -f ~/.bashrc ]; then
- . ~/.bashrc; 
-fi
-
-if [ -f ~/.bash_prompt ]; then
-  . ~/.bash_prompt
-fi
+# Source bash config files
+for file in ~/.{profile, bashrc, bash_prompt}; do
+  [ -r "$file" ] && . "$file"
+done
+unset file

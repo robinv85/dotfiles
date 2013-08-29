@@ -2,7 +2,7 @@
 # 
 # ~/.profile
 # 
-# Global settings for all shells
+# These settings are accessible to all shells
 #
 # ================================================================== #
 
