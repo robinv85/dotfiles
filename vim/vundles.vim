@@ -21,11 +21,13 @@ Bundle "pangloss/vim-javascript"
 Bundle "itspriddle/vim-jquery.git"
 Bundle "jtratner/vim-flavored-markdown.git"
 Bundle "nelstrom/vim-markdown-preview"
-Bundle "vim-scripts/sudo.vim"
 Bundle "chrisbra/color_highlight.git"
 Bundle "bling/vim-airline.git"
-Bundle "vim-scripts/TagHighlight.git"
 Bundle "bogado/file-line.git"
+
+" vim-scripts (can omit username)
+Bundle "sudo.vim"
+Bundle "TagHighlight"
 
 " Color schemes
 Bundle "skwp/vim-colors-solarized"
