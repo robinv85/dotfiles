@@ -8,7 +8,7 @@ endif
 
 set t_Co=256		" Enable 256 colors
 "set g:solarized_termcolors=256
-colorscheme hemisu 
+colorscheme hybrid
 set background=dark
 
 set history=1000	" :cmdline history
