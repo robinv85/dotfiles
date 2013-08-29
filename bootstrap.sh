@@ -17,7 +17,7 @@ cd "$(dirname "${BASH_SOURCE}")"
 dir=`pwd`
 
 # List of files & folder to symlink
-list="bashrc profile bash_profile vim vimrc osx"
+list="bashrc profile bash_profile bash_prompt vim vimrc osx"
 
 # Create symlinks
 link_dots() {

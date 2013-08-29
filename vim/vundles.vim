@@ -17,16 +17,11 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Bundles
-
 Bundle "pangloss/vim-javascript"
 Bundle "itspriddle/vim-jquery.git"
 Bundle "jtratner/vim-flavored-markdown.git"
 Bundle "nelstrom/vim-markdown-preview"
-
 Bundle "vim-scripts/sudo.vim"
-
-
-" Cosmetics, color scheme, Powerline...
 Bundle "chrisbra/color_highlight.git"
 Bundle "bling/vim-airline.git"
 Bundle "vim-scripts/TagHighlight.git"
@@ -40,9 +35,6 @@ Bundle "morhetz/gruvbox"
 Bundle "w0ng/vim-hybrid"
 Bundle "Lokaltog/vim-distinguished"
 Bundle "croaker/mustang-vim"
-Bundle "ChrisKempson/Tomorrow-Theme"
 
 " Filetype plugin indent on is required by vundle
 filetype plugin indent on
-
-
