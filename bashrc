@@ -84,6 +84,7 @@ alias gco='git checkout'
 alias gd='git diff'
 alias gf='git fetch'
 alias gl='git log'
+alias glg='git log --date-order --all --graph --format="%C(green)%h%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'
 alias gh='github'
 
 #git log oneline, including author
@@ -95,6 +96,7 @@ function glpn() {
 alias gi='vi .gitignore'
 alias gps='git push'
 alias gpl='git pull'
+alias gs='git status'
 alias gsm='git submodule'
 
 
