@@ -77,13 +77,12 @@ get_git_info() {
   if [[ ${git_status} =~ ${branch_pattern} ]]; then
     branch=${BASH_REMATCH[1]}
   fi
-  echo $git_status
   git_info="${white}on ${git_info_style}[${branch}]${remote}${white}"
 }
 
 set_prompt_symbol() {
   if test $1 -eq 0 ; then
-    prompt_symbol="\$"
+    prompt_symbol="${white}\$"
   else
     prompt_symbol="${red}\$${white}"
   fi
