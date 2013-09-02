@@ -24,6 +24,7 @@ Bundle "nelstrom/vim-markdown-preview"
 Bundle "chrisbra/color_highlight.git"
 Bundle "bling/vim-airline.git"
 Bundle "bogado/file-line.git"
+Bundle "editorconfig/editorconfig-vim"
 
 " vim-scripts (can omit username)
 Bundle "sudo.vim"
