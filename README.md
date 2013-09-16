@@ -2,15 +2,16 @@ Dotfiles
 ========
 
 My OS X & \*nix configuration settings. 
-I'm still learning git, and I'm fairly new to OS X and Linux/Unix so this repo is still under construction, use at your own risk (careful with overwriting files)
+My dotfiles are a work in progress and there are a few quircks that need to be fixed, use at your own risk (careful with overwriting files)
 
 Todo
 -----
 
-* Group into folders
-* Figure out Vim bundles / submodules (added Vundle as submodule, and run bundle install from the bootstrap script, manage plugins within vim/vundles.vim)
-* Improve installer: different OS's, protect overwriting files, make backup, uninstall, bash commands
-* put editor preferences into editorconfig..
+* Folder structure (vim, bash, ...)
+* Improve installer & maybe add some bash commands (install, configure,  update, remove, modularize install ...)
+* Improve cross-OS functionality
+* Improve overwrite protection (maybe .bak folder, versions?) 
+* Look into editorconfig, sublime/brackets settings etc.
 
 Installation
 ------------
