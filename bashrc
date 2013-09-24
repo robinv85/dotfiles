@@ -1,8 +1,8 @@
 # ================================================================== #
 #
-# ~/.bashrc 
+# ~/.bashrc
 #
-# Bash-specific settings 
+# Bash-specific settings
 # For interactive non-login shells
 #
 # ================================================================== #
@@ -96,6 +96,7 @@ function glpn() {
 alias gi='vi .gitignore'
 alias gps='git push'
 alias gpl='git pull'
+alias gr='git remote'
 alias gs='git status'
 alias gsm='git submodule'
 
@@ -105,3 +106,23 @@ alias gsm='git submodule'
 # ---------------
 
 alias s='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
+
+# ------------
+# Browse files
+# ------------
+
+alias ff="open -a firefox"
+alias c="open -a chrome"
+
+# ----
+# Grunt
+# -----
+
+function grin() {
+  npm install --save-dev grunt-"$@"
+}
+
+function grinc() {
+  npm install --save-dev grunt-contrib-"$@"
+}
+
