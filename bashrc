@@ -94,7 +94,10 @@ function glpn() {
 }
 
 alias gi='vi .gitignore'
+
 alias gps='git push'
+alias gpsom='git push origin master'
+
 alias gpl='git pull'
 alias gr='git remote'
 alias gs='git status'
@@ -112,7 +115,7 @@ alias s='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 # ------------
 
 alias ff="open -a firefox"
-alias c="open -a chrome"
+alias chr="open -a chrome"
 
 # ----
 # Grunt
