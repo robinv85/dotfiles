@@ -115,7 +115,6 @@ alias s='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 # ------------
 
 alias ff="open -a firefox"
-alias chr="open -a chrome"
 
 # ----
 # Grunt
@@ -123,9 +122,5 @@ alias chr="open -a chrome"
 
 function grin() {
   npm install --save-dev grunt-"$@"
-}
-
-function grinc() {
-  npm install --save-dev grunt-contrib-"$@"
 }
 
