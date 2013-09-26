@@ -48,9 +48,9 @@ alias lm='ll | more'	      		# pipe through 'more'
 alias la='ll -a'	          	# show hidden
 
 
-# -----------
-#
-# -----------
+# ------
+# Finder
+# ------
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
