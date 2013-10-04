@@ -1,7 +1,7 @@
 # ================================================================== #
-# 
+#
 # ~/.profile
-# 
+#
 # These settings are accessible to all shells
 #
 # ================================================================== #
@@ -27,8 +27,11 @@ if [[ -d ~/bin ]] ; then
     for d in $(find ~/bin -type d -a \! -wholename '*/.git/*'); do
         PATH="$d:$PATH"
     done
-    
+
     IFS="$currentIFS"; unset currentIFS
 fi
+
+export MONGO_PATH=/usr/local/mongodb
+export PATH=$PATH:$MONGO_PATH/bin
 
 export PATH
