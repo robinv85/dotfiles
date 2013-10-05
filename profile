@@ -16,7 +16,7 @@ PATH=$PATH:/Applications/VirtualBox.app/Contents/MacOS
 
 # Put rbenv in PATH if installed
 if [ -f ~/.rbenv ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
+  PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
 
@@ -31,7 +31,10 @@ if [[ -d ~/bin ]] ; then
     IFS="$currentIFS"; unset currentIFS
 fi
 
+# use MAMP for PHP
+PATH=/Applications/MAMP/bin/php/php5.4.10/bin:$PATH
+
 export MONGO_PATH=/usr/local/mongodb
-export PATH=$PATH:$MONGO_PATH/bin
+PATH=$PATH:$MONGO_PATH/bin
 
 export PATH
