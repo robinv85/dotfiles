@@ -30,14 +30,13 @@ if tput setaf 1 &> /dev/null; then
     cyan=$(tput setaf 6)
     magenta=$(tput setaf 5)
     yellow=$(tput setaf 3)
-    black=$(tput setaf 8)
     white=$(tput setaf 7)
 fi
 else
- green="\033[1;32m"
- magenta="\033[1;31m"
- white="\033[1;37m"
- orange="\033[;33m"
+  green="\033[1;32m"
+  magenta="\033[1;31m"
+  white="\033[1;37m"
+  orange="\033[;33m"
 fi
 
 # Git status information
@@ -47,7 +46,6 @@ is_git_repo() {
 }
 
 get_git_info() {
-
   git_status="$(git status 2> /dev/null)"
   if [[ ${git_status} =~ "working directory clean" ]]; then
     git_info_style="${green}"
@@ -92,7 +90,6 @@ set_prompt_symbol() {
 # Customize Bash prompt
 build_prompt()  {
   set_prompt_symbol $?
-
   username="${cyan}\\u"
   at="${white}@"
   host="${orange}\\h"
@@ -106,4 +103,5 @@ build_prompt()  {
 
   PS1="\n $username$at$host${white}: $path $git_info \n $prompt_symbol ${white} "
 }
-build_prompt
+
+PROMPT_COMMAND=build_prompt
