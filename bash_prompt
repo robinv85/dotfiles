@@ -29,9 +29,9 @@ if tput setaf 1 &> /dev/null; then
     blue=$(tput setaf 4)
     cyan=$(tput setaf 6)
     magenta=$(tput setaf 5)
-    yellow=(tput setaf 3)
-    black=(tput setaf 8)
-    white=(tput setaf 7)
+    yellow=$(tput setaf 3)
+    black=$(tput setaf 8)
+    white=$(tput setaf 7)
 fi
 else
  green="\033[1;32m"
@@ -78,6 +78,7 @@ get_git_info() {
     branch=${BASH_REMATCH[1]}
   fi
   git_info="${white}on ${git_info_style}[${branch}]${remote}${white}"
+
 }
 
 set_prompt_symbol() {
