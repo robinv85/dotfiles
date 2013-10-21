@@ -48,9 +48,9 @@ alias lm='ll | more'	      		# pipe through 'more'
 alias la='ll -a'	          	# show hidden
 
 
-# ------
+# -------
 # Finder
-# ------
+# -------
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
@@ -110,15 +110,15 @@ alias gsm='git submodule'
 
 alias s='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 
-# ------------
+# -------------
 # Browse files
-# ------------
+# -------------
 
 alias ff="open -a firefox"
 
-# ----
+# ------
 # Grunt
-# -----
+# ------
 
 function grin() {
   npm install --save-dev grunt-"$@"
