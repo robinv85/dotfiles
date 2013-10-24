@@ -2,7 +2,6 @@ Dotfiles
 ========
 
 My OS X & \*nix configuration settings. 
-My dotfiles are a work in progress and there are a few quircks that need to be fixed, use at your own risk (careful with overwriting files)
 
 Todo
 -----
