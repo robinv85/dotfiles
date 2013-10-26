@@ -7,11 +7,10 @@
 #
 # ================================================================== #
 
-# ================================================================== #
+# ------------------------------------------------------------------
 # Aliases
-# ================================================================== #
+# ------------------------------------------------------------------
 
-# -------
 # Common
 # -------
 
@@ -20,7 +19,6 @@ alias h='history'
 alias pre='open -a Preview'
 
 
-# ---------------------
 # Changing directories
 # ---------------------
 
@@ -30,7 +28,6 @@ alias ....='cd ../../../'
 alias .....='cd ../../../..'
 
 
-# -----------
 # ls helpers
 # -----------
 
@@ -44,11 +41,9 @@ fi
 alias lx='ls -lXB'	        	# Sort by extension
 alias lk='ls -lSr'	        	# Sort by size, biggest last
 alias ll='ls -la'	          	# Long listing format
-alias lm='ll | more'	      		# pipe through 'more'
+alias lm='ll | more'	      	# pipe through 'more'
 alias la='ll -a'	          	# show hidden
 
-
-# -------
 # Finder
 # -------
 
@@ -60,7 +55,6 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
-# ----
 # Git
 # ----
 
@@ -104,19 +98,24 @@ alias gs='git status'
 alias gsm='git submodule'
 
 
-# ---------------
+# Applications
+# -------------
+
 # Sublime Text 2
-# ---------------
+alias slim='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 
-alias s='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
-
-# -------------
-# Browse files
-# -------------
-
+# Firefox
 alias ff="open -a firefox"
 
-# ------
+# Google Chrome
+alias chrome="open -a 'Google Chrome'"
+
+# Safari
+alias safari="open -a safari"
+
+# Edge Code
+alias ec="open -a 'Adobe Edge Code CC'"
+
 # Grunt
 # ------
 
