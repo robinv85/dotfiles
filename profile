@@ -1,4 +1,4 @@
-# ================================================================== #
+ii# ================================================================== #
 #
 # ~/.profile
 #
@@ -11,8 +11,6 @@
 
 # PATH
 # ----
-
-PATH=$PATH:/Applications/VirtualBox.app/Contents/MacOS
 
 # Put rbenv in PATH if installed
 if [ -f ~/.rbenv ]; then
