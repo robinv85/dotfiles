@@ -1,0 +1,6 @@
+# no .editorconfig files above my home directory !
+root = true
+
+[*.{sh,php,html,css,scss,js}]
+indent_style = space
+indent_size = 2
