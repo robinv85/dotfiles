@@ -6,11 +6,10 @@ My OS X & \*nix configuration settings.
 Todo
 -----
 
-* Folder structure (vim, bash, ...)
-* Improve installer & maybe add some bash commands (install, configure,  update, remove, modularize install ...)
+* Improve folder structure (vim, bash, ...)
+* Improve installation script  (+ add cli )
 * Improve cross-OS functionality
 * Improve overwrite protection (maybe .bak folder, versions?) 
-* Look into editorconfig, sublime/brackets settings etc.
 
 Installation
 ------------
@@ -23,6 +22,7 @@ Clone this repo anywhere, e.g. to ~/dots, then run bootstrap.sh and the followin
     .vim/
     .vimrc
     .osx
+    .editorconfig
 
 Kudos
 -----
@@ -35,4 +35,3 @@ Inspired by ODT (Other People's Dotfiles) and some articles
 * [Yan Pritzker's dotfiles](https://github.com/skwp/dotfiles)
 * [Holman does dotfiles](https://github.com/holman/dotfiles)
 * ["Cowboy" Ben Alman's dotfiles](https://github.com/cowboy/dotfiles)
-
