@@ -1,6 +1,12 @@
-# no .editorconfig files above my home directory !
+# Unify coding style across editors
+# More info: http://EditorConfig.org
+
+# no .editorconfig files above my home directory
 root = true
 
-[*.{sh,php,html,css,scss,js}]
+[*]
 indent_style = space
+end_of_line = lf
+
+[*.{sh,php,html,css,scss,js}]
 indent_size = 2
