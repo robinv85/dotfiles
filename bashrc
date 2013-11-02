@@ -89,7 +89,7 @@ function glpn() {
   echo ''
 }
 
-alis gh='github'
+alias gh='github'
 alias gi='vi .gitignore'
 
 alias gps='git push'
