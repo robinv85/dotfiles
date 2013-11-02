@@ -44,6 +44,7 @@ alias ll='ls -la'	          	# Long listing format
 alias lm='ll | more'	      	# pipe through 'more'
 alias la='ll -a'	          	# show hidden
 
+
 # Finder
 # -------
 
@@ -55,10 +56,9 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
+
 # Git
 # ----
-
-#alias g='git status'
 
 function g {
   if [[ $# > 0 ]]; then
@@ -72,14 +72,16 @@ alias ga='git add'
 alias gb='git branch'
 alias gc='git commit'
 alias gca='git commit -a'
+alias gcam='git commit -am'
 alias gcm='git commit -m'
 alias gcl='git clone'
 alias gco='git checkout'
+alias gcob='git checkout -b'
 alias gd='git diff'
 alias gf='git fetch'
+
 alias gl='git log'
 alias glg='git log --date-order --all --graph --format="%C(green)%h%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'
-alias gh='github'
 
 #git log oneline, including author
 function glpn() {
@@ -87,9 +89,11 @@ function glpn() {
   echo ''
 }
 
+alis gh='github'
 alias gi='vi .gitignore'
 
 alias gps='git push'
+alias gpso='git push origin'
 alias gpsom='git push origin master'
 
 alias gpl='git pull'
@@ -97,6 +101,7 @@ alias gr='git remote'
 alias gs='git status'
 alias gsm='git submodule'
 
+alias gup='git fetch upstream && git merge upstream/master'
 
 # Applications
 # -------------
@@ -115,6 +120,7 @@ alias safari="open -a safari"
 
 # Edge Code
 alias ec="open -a 'Adobe Edge Code CC'"
+
 
 # Grunt
 # ------
