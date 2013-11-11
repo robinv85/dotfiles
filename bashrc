@@ -102,6 +102,7 @@ alias gs='git status'
 alias gsm='git submodule'
 
 alias gup='git fetch upstream && git merge upstream/master'
+alias gsup='git submodule sync && git submodule update --init'
 
 # Applications
 # -------------
