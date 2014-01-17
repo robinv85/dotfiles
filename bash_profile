@@ -12,8 +12,5 @@ for file in ~/.{profile,bashrc,bash_prompt}; do
 done
 unset file
 
-# LS colors for dark background
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-
 # Node Version Manager
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
