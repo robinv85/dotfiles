@@ -17,6 +17,13 @@ set -o vi
 # LS colors for dark background
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
+# Detect which OS and ovverride default ls with colored output
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+  alias ls='ls --color'
+else # OS X `ls`
+  alias ls='ls -G'
+fi
+
 # ------------------------------------------------------------------
 # Aliases
 # ------------------------------------------------------------------
@@ -40,13 +47,6 @@ alias .....='cd ../../../..'
 
 # ls helpers
 # -----------
-
-# Detect which OS and ovverride default ls with colored output
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-  alias ls='ls --color'
-else # OS X `ls`
-  alias ls='ls -G'
-fi
 
 alias lx='ls -lXB'	        	# Sort by extension
 alias lk='ls -lSr'	        	# Sort by size, biggest last
@@ -137,5 +137,9 @@ alias ec="open -a 'Adobe Edge Code CC'"
 # ------
 
 function grin() {
+  npm install --save grunt-"$@"
+}
+
+function grind() {
   npm install --save-dev grunt-"$@"
 }
