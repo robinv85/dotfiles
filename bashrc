@@ -29,7 +29,7 @@ fi
 # ------------------------------------------------------------------
 
 # Common
-# -------
+# ------
 
 alias c='clear'
 alias h='history'
@@ -37,7 +37,7 @@ alias pre='open -a Preview'
 
 
 # Changing directories
-# ---------------------
+# --------------------
 
 alias ..='cd ..'
 alias ...='cd ../../'
@@ -46,7 +46,7 @@ alias .....='cd ../../../..'
 
 
 # ls helpers
-# -----------
+# ----------
 
 alias lx='ls -lXB'	        	# Sort by extension
 alias lk='ls -lSr'	        	# Sort by size, biggest last
@@ -56,7 +56,7 @@ alias la='ll -a'	          	# show hidden
 
 
 # Finder
-# -------
+# ------
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
@@ -68,7 +68,7 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 
 
 # Git
-# ----
+# ---
 
 function g {
   if [[ $# > 0 ]]; then
@@ -109,8 +109,9 @@ alias gsm='git submodule'
 alias gup='git fetch upstream && git merge upstream/master'
 alias gsup='git submodule sync && git submodule update --init'
 
+
 # Applications
-# -------------
+# ------------
 
 # Sublime Text 2
 alias slim='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
@@ -128,13 +129,17 @@ alias safari="open -a safari"
 alias ec="open -a 'Adobe Edge Code CC'"
 
 
+# NPM
+# ---
+
+alias nin='npm install'
+alias nins='npm install --save'
+alias ninsd='npm install --save-dev'
+
 # Grunt
-# ------
+# -----
 
 function grin() {
-  npm install --save grunt-"$@"
-}
-
-function grind() {
   npm install --save-dev grunt-"$@"
 }
+
