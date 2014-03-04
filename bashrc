@@ -114,7 +114,7 @@ alias gsup='git submodule sync && git submodule update --init'
 # ------------
 
 # Sublime Text 2
-alias slim='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
+alias s='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 
 # Firefox
 alias ff="open -a firefox"
