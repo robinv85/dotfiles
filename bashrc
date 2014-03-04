@@ -67,6 +67,12 @@ alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && 
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
 
+# Go to
+# -----
+
+alias dev='cd ~/Dev'
+
+
 # Git
 # ---
 
