@@ -1,5 +1,6 @@
 " Vim settings
 set nocompatible	" Use Vim defaults, must be first
+filetype off		" required for Vundle
 
 " Load Vundle plugins 
 if filereadable(expand("~/.vim/vundles.vim"))
