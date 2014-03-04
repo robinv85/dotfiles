@@ -15,29 +15,39 @@ fi
 if tput setaf 1 &> /dev/null; then
   tput sgr 0 0
   if [[ $(tput colors) -ge 256 ]] 2</dev/null; then
-    red=$(tput setaf 124)
-    green=$(tput setaf 76)
-    blue=$(tput setaf 33)
-    cyan=$(tput setaf 37)
-    magenta=$(tput setaf 125)
-    yellow=$(tput setaf 190)
-    white=$(tput setaf 7)
-    orange=$(tput setaf 136)
+    RED=$(tput setaf 124)
+    GREEN=$(tput setaf 76)
+    BLUE=$(tput setaf 33)
+    CYAN=$(tput setaf 37)
+    MAGENTA=$(tput setaf 125)
+    YELLOW=$(tput setaf 190)
+    WHITE=$(tput setaf 7)
+    ORANGE=$(tput setaf 136)
   else
-    red=$(tput setaf 1)
-    green=$(tput setaf 2)
-    blue=$(tput setaf 4)
-    cyan=$(tput setaf 6)
-    magenta=$(tput setaf 5)
-    yellow=$(tput setaf 3)
-    white=$(tput setaf 7)
+    RED=$(tput setaf 1)
+    GREEN=$(tput setaf 2)
+    BLUE=$(tput setaf 4)
+    CYAN=$(tput setaf 6)
+    MAGENTA=$(tput setaf 5)
+    YELLOW=$(tput setaf 3)
+    WHITE=$(tput setaf 7)
 fi
 else
-  green="\033[1;32m"
-  magenta="\033[1;31m"
-  white="\033[1;37m"
-  orange="\033[;33m"
+  GREEN="\033[1;32m"
+  MAGENTA="\033[1;31m"
+  WHITE="\033[1;37m"
+  ORANGE="\033[;33m"
 fi
+
+export RED
+export GREEN
+export BLUE
+export CYAN
+export MAGENTA
+export YELLOW
+export WHITE
+export ORANGE
+
 
 # Git status information
 
@@ -48,11 +58,11 @@ is_git_repo() {
 get_git_info() {
   git_status="$(git status 2> /dev/null)"
   if [[ ${git_status} =~ "working directory clean" ]]; then
-    git_info_style="${green}"
+    git_info_style="${GREEN}"
   elif [[ ${git_status} =~ "Changes to be committed" ]]; then
-    git_info_style="${yellow}"
+    git_info_style="${YELLOW}"
   else
-    git_info_style="${red}"
+    git_info_style="${RED}"
   fi
 
   remote_pattern="# Your branch is (.*) of"
@@ -75,25 +85,25 @@ get_git_info() {
   if [[ ${git_status} =~ ${branch_pattern} ]]; then
     branch=${BASH_REMATCH[1]}
   fi
-  git_info="${white}on ${git_info_style}[${branch}]${remote}${white}"
+  git_info="${WHITE}on ${git_info_style}[${branch}]${remote}${WHITE}"
 
 }
 
 set_prompt_symbol() {
   if test $1 -eq 0 ; then
-    prompt_symbol="${white}\$"
+    prompt_symbol="${WHITE}\$"
   else
-    prompt_symbol="${red}\$${white}"
+    prompt_symbol="${RED}\$${WHITE}"
   fi
 }
 
 # Customize Bash prompt
 build_prompt()  {
   set_prompt_symbol $?
-  username="${cyan}\\u"
-  at="${white}@"
-  host="${orange}\\h"
-  path="${blue}\\w"
+  username="${CYAN}\\u"
+  at="${WHITE}@"
+  host="${ORANGE}\\h"
+  path="${BLUE}\\w"
 
   if is_git_repo ; then
    get_git_info
@@ -101,7 +111,7 @@ build_prompt()  {
     git_info=""
   fi
 
-  PS1="\n $username$at$host${white}: $path $git_info \n $prompt_symbol ${white} "
+  PS1="\n $username$at$host${WHITE}: $path $git_info \n $prompt_symbol ${WHITE} "
 }
 
 PROMPT_COMMAND=build_prompt
