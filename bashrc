@@ -142,6 +142,7 @@ alias nin='npm install'
 alias nins='npm install --save'
 alias ninsd='npm install --save-dev'
 
+
 # Grunt
 # -----
 
@@ -149,3 +150,8 @@ function grin() {
   npm install --save-dev grunt-"$@"
 }
 
+
+# Bower
+# -----
+
+alias bis='bower install --save'
