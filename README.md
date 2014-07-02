@@ -27,7 +27,7 @@ Clone this repo anywhere, e.g. to ~/dots, then run bootstrap.sh and the followin
 Kudos
 -----
 
-Inspired by ODT (Other People's Dotfiles) and some articles
+Inspired by Other People's Dotfiles and some articles
 
 * [Github does dotfiles](http://dotfiles.github.io/) and [@octodots](http://www.twitter.com/octodots) on Twitter
 * [Mathias Bynens' dotfiles](https://github.com/mathiasbynens/dotfiles)
