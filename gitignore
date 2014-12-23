@@ -1,0 +1,19 @@
+# global git ignore for OS X #
+##############################
+
+# hidden files
+.DS_Store
+
+# Vim swap files
+.*.sw?
+
+# Thumbnails
+._*
+Thumbs.db
+
+# Files that might appear on an external disk
+.Spotlight-V100
+.Trashes
+
+# Rbenv
+/.rbenv-version
