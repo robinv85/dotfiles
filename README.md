@@ -14,7 +14,7 @@ Todo
 Installation
 ------------
 
-Clone this repo anywhere, e.g. to ~/dots, then run bootstrap.sh and the following files & folders are automatically symlinked into your $HOME directory.
+Clone this repo anywhere, e.g. to ~/.dotfiles, then run bootstrap.sh and the following files & folders are automatically symlinked into your $HOME directory.
 
     .profile
     .bash_profile
