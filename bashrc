@@ -138,6 +138,7 @@ alias ec="open -a 'Adobe Edge Code CC'"
 alias nin='npm install'
 alias nins='npm install --save'
 alias ninsd='npm install --save-dev'
+alias ning='npm install -g'
 alias nun='npm uninstall'
 alias nup='npm update'
 
