@@ -111,7 +111,7 @@ build_prompt()  {
     git_info=""
   fi
 
-  PS1="\n $username$at$host${WHITE}: $path $git_info \n $prompt_symbol ${WHITE} "
+  PS1="\n$username$at$host${WHITE}: $path $git_info \n$prompt_symbol ${WHITE} "
 }
 
 PROMPT_COMMAND=build_prompt
