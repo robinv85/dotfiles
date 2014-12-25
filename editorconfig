@@ -4,9 +4,15 @@
 # no .editorconfig files above my home directory
 root = true
 
+# General defaults
 [*]
+charset = utf-8
 indent_style = space
 end_of_line = lf
+tab_width = 4
 
-[*.{sh,php,html,css,scss,js}]
+[*.{py,sh,c,vim}]
+indent_size = 4
+
+[*.{rb,php,html,css,scss,less,js}]
 indent_size = 2
