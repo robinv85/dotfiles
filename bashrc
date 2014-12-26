@@ -128,9 +128,6 @@ alias chrome="open -a 'Google Chrome'"
 # Safari
 alias safari="open -a safari"
 
-# Edge Code
-alias ec="open -a 'Adobe Edge Code CC'"
-
 
 # NPM
 # ---

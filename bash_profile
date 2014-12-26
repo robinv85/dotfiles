@@ -12,5 +12,3 @@ for file in ~/.{profile,bashrc,bash_prompt}; do
 done
 unset file
 
-# Node Version Manager
-[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
