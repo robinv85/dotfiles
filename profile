@@ -26,10 +26,4 @@ if [[ -d ~/bin ]] ; then
     IFS="$currentIFS"; unset currentIFS
 fi
 
-# use MAMP for PHP
-PATH=/Applications/MAMP/bin/php/php5.4.10/bin:$PATH
-
-export MONGO_PATH=/usr/local/mongodb
-PATH=$PATH:$MONGO_PATH/bin
-
 export PATH
