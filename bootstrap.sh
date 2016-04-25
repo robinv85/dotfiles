@@ -8,13 +8,13 @@
 ###############################
 
 # Go to script location
-cd "$(dirname "${BASH_SOURCE}")"
+cd "$(dirname "${BASH_SOURCE[@]}")" || exit;
 
 # Get script path
 dir=$(pwd)
 
 # List of files & folders to symlink
-list="bashrc profile bash_profile bash_prompt vim vimrc osx editorconfig tmux.conf"
+list="bashrc profile bash_profile bash_prompt osx editorconfig tmux.conf"
 
 # Create symlinks
 link_dotfiles() {
