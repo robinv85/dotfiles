@@ -14,7 +14,7 @@ cd "$(dirname "${BASH_SOURCE[@]}")" || exit;
 dir=$(pwd)
 
 # List of files & folders to symlink
-list="bashrc profile bash_profile bash_prompt osx editorconfig tmux.conf"
+list="bashrc profile bash_profile bash_prompt osx editorconfig tmux.conf gitignore"
 
 # Create symlinks
 link_dotfiles() {
@@ -33,6 +33,9 @@ link_dotfiles() {
 }
 
 link_dotfiles
+
+# Use the global .gitignore file
+git config --global core.excludesfile ~/.gitignore
 
 # Install vim bundles via Vundle
 vim +BundleInstall +qall

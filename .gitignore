@@ -1,7 +1,3 @@
 vim/.netrwhist
 vim/bundle/*
 !vim/bundle/vundle
-*.swp
-.DS_Store
-.idea
-node_modules
