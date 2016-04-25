@@ -14,15 +14,6 @@
 # Vi mode
 set -o vi
 
-# LS colors for dark background
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-
-# Detect which OS and ovverride default ls with colored output
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-  alias ls='ls --color'
-else # OS X `ls`
-  alias ls='ls -G'
-fi
 
 # ------------------------------------------------------------------
 # Aliases
@@ -48,11 +39,11 @@ alias .....='cd ../../../..'
 # ls helpers
 # ----------
 
-alias lx='ls -lXB'	        	# Sort by extension
-alias lk='ls -lSr'	        	# Sort by size, biggest last
-alias ll='ls -la'	          	# Long listing format
-alias lm='ll | more'	      	# pipe through 'more'
-alias la='ll -a'	          	# show hidden
+alias lx='ls -lXB'      # Sort by extension
+alias lk='ls -lSr'      # Sort by size, biggest last
+alias ll='ls -la'       # Long listing format
+alias lm='ll | more'    # pipe through 'more'
+alias la='ll -a'        # show hidden
 
 
 # Finder
@@ -146,9 +137,3 @@ alias nup='npm update'
 function grin() {
   npm install --save-dev grunt-"$@"
 }
-
-
-# Bower
-# -----
-
-alias bis='bower install --save'

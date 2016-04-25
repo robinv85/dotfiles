@@ -72,3 +72,10 @@ chflags nohidden ~/Library
 
 # Allow text selection in Quick Look window
 defaults write com.apple.finder QLEnableTextSelection -bool true && killall Finder
+
+###############################################################################
+# Terminal & iTerm 2                                                          #
+###############################################################################
+
+# Only use UTF-8 in Terminal.app
+defaults write com.apple.terminal StringEncodings -array 4
