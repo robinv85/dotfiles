@@ -34,8 +34,19 @@ link_dotfiles() {
 
 link_dotfiles
 
+# Create .aliases file in home directory if it doesn't exist
+if [ -e ~/.aliases ]
+then
+	echo "~/.aliases exists"
+else
+	echo "Creating ./aliases file"
+	touch ~/.aliases
+	echo "# Add local aliases" >> ~/.aliases
+fi
+
 # Use the global .gitignore file
 git config --global core.excludesfile ~/.gitignore
 
+# Todo : move to setup script
 # Install vim bundles via Vundle
-vim +BundleInstall +qall
+# vim +BundleInstall +qall

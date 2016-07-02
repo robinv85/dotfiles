@@ -64,12 +64,6 @@ alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && 
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
 
-# Go to
-# -----
-
-alias dev='cd ~/Dev'
-
-
 # Git
 # ---
 
@@ -113,25 +107,6 @@ alias gup='git fetch upstream && git merge upstream/master'
 alias gsup='git submodule sync && git submodule update --init'
 
 
-# Applications
-# ------------
-
-# Firefox
-alias ff="open -a firefox"
-
-# Google Chrome
-alias chrome="open -a 'Google Chrome'"
-
-# Safari
-alias safari="open -a safari"
-
-# Atom 
-alias a='open -a atom'
-
-# WebStorm
-alias webstorm='open -a webstorm'
-alias ws='webstorm'
-
 # NPM
 # ---
 
@@ -149,3 +124,8 @@ alias nup='npm update'
 function grin() {
   npm install --save-dev grunt-"$@"
 }
+
+
+# Load .aliases
+# -------------
+source ~/.aliases
