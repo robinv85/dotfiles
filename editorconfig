@@ -1,5 +1,5 @@
 # Unify coding style across editors
-# More info: http://EditorConfig.org
+# More info: http://editorconfig.org
 
 # no .editorconfig files above my home directory
 root = true
@@ -7,12 +7,13 @@ root = true
 # General defaults
 [*]
 charset = utf-8
-indent_style = space
-end_of_line = lf
-tab_width = 4
-
-[*.{py,sh,c,vim}]
-indent_size = 4
-
-[*.{rb,php,html,css,scss,less,js}]
+indent_style = tab
 indent_size = 2
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# package.json indentation cannot be changed
+# https://github.com/npm/npm/pull/3180#issuecomment-16336516
+[{package.json}]
+indent_style = space
