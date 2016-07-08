@@ -6,112 +6,128 @@
 
 # Check color mode and set to 256 colors
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
-  export TERM=gnome-256color
+  export TERM='gnome-256color';
 elif infocmp xterm-256color >/dev/null 2>&1; then
-  export TERM=xterm-256color
-fi
+  export TERM='xterm-256color';
+fi;
 
-# Color definitions
+
+prompt_git() {
+  local s='';
+  local branchName='';
+
+  # Check if the current directory is in a Git repository.
+  if [ $(git rev-parse --is-inside-work-tree &>/dev/null; echo "${?}") == '0' ]; then
+
+    # check if the current directory is in .git before running git checks
+    if [ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]; then
+
+      # Ensure the index is up to date.
+      git update-index --really-refresh -q &>/dev/null;
+
+      # Check for uncommitted changes in the index.
+      if ! $(git diff --quiet --ignore-submodules --cached); then
+        s+='+';
+      fi;
+
+      # Check for unstaged changes.
+      if ! $(git diff-files --quiet --ignore-submodules --); then
+        s+='!';
+      fi;
+
+      # Check for untracked files.
+      if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+        s+='?';
+      fi;
+
+      # Check for stashed files.
+      if $(git rev-parse --verify refs/stash &>/dev/null); then
+        s+='$';
+      fi;
+
+    fi;
+
+    # Get the short symbolic ref.
+    # If HEAD isn’t a symbolic ref, get the short SHA for the latest commit
+    # Otherwise, just give up.
+    branchName="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
+    git rev-parse --short HEAD 2> /dev/null || \
+    echo '(unknown)')";
+
+    [ -n "${s}" ] && s=" [${s}]";
+
+    echo -e "${1}${branchName}${blue}${s}";
+  else
+    return;
+  fi;
+}
+
 if tput setaf 1 &> /dev/null; then
-  tput sgr 0 0
-  if [[ $(tput colors) -ge 256 ]] 2</dev/null; then
-    RED=$(tput setaf 124)
-    GREEN=$(tput setaf 76)
-    BLUE=$(tput setaf 33)
-    CYAN=$(tput setaf 37)
-    MAGENTA=$(tput setaf 125)
-    YELLOW=$(tput setaf 190)
-    WHITE=$(tput setaf 7)
-    ORANGE=$(tput setaf 136)
-  else
-    RED=$(tput setaf 1)
-    GREEN=$(tput setaf 2)
-    BLUE=$(tput setaf 4)
-    CYAN=$(tput setaf 6)
-    MAGENTA=$(tput setaf 5)
-    YELLOW=$(tput setaf 3)
-    WHITE=$(tput setaf 7)
-fi
+  tput sgr0; # reset colors
+  bold=$(tput bold);
+  reset=$(tput sgr0);
+  # Solarized colors, taken from http://git.io/solarized-colors.
+  black=$(tput setaf 0);
+  blue=$(tput setaf 33);
+  cyan=$(tput setaf 37);
+  green=$(tput setaf 64);
+  orange=$(tput setaf 166);
+  purple=$(tput setaf 125);
+  red=$(tput setaf 124);
+  violet=$(tput setaf 61);
+  white=$(tput setaf 15);
+  yellow=$(tput setaf 136);
 else
-  GREEN="\033[1;32m"
-  MAGENTA="\033[1;31m"
-  WHITE="\033[1;37m"
-  ORANGE="\033[;33m"
+  bold='';
+  reset="\e[0m";
+  black="\e[1;30m";
+  blue="\e[1;34m";
+  cyan="\e[1;36m";
+  green="\e[1;32m";
+  orange="\e[1;33m";
+  purple="\e[1;35m";
+  red="\e[1;31m";
+  violet="\e[1;35m";
+  white="\e[1;37m";
+  yellow="\e[1;33m";
+fi;
+
+# Highlight the user name when logged in as root.
+if [[ "${USER}" == "root" ]]; then
+  userStyle="${red}";
+else
+  userStyle="${orange}";
+fi;
+
+# Highlight the hostname when connected via SSH.
+if [[ "${SSH_TTY}" ]]; then
+  hostStyle="${bold}${red}";
+else
+  hostStyle="${yellow}";
+fi;
+
+# Set the terminal title to the current working directory.
+PS1="\[\033]0;\w\007\]";
+PS1+="\[${bold}\]\n"; # newline
+PS1+="\[${userStyle}\]\u"; # username
+PS1+="\[${white}\] at ";
+PS1+="\[${hostStyle}\]\h"; # host
+PS1+="\[${white}\] in ";
+PS1+="\[${green}\]\w"; # working directory
+PS1+="\$(prompt_git \"${white} on ${violet}\")"; # Git repository details
+PS1+="\n";
+PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
+export PS1;
+
+PS2="\[${yellow}\]→ \[${reset}\]";
+export PS2;
+
+# LS colors for dark background
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
+# Detect OS and override default ls with colored output
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+  alias ls='ls --color'
+else # OS X `ls`
+  alias ls='ls -G'
 fi
-
-export RED
-export GREEN
-export BLUE
-export CYAN
-export MAGENTA
-export YELLOW
-export WHITE
-export ORANGE
-
-
-# Git status information
-
-is_git_repo() {
-  git branch > /dev/null 2>&1
-}
-
-get_git_info() {
-  git_status="$(git status 2> /dev/null)"
-  if [[ ${git_status} =~ "working directory clean" ]]; then
-    git_info_style="${GREEN}"
-  elif [[ ${git_status} =~ "Changes to be committed" ]]; then
-    git_info_style="${YELLOW}"
-  else
-    git_info_style="${RED}"
-  fi
-
-  remote_pattern="# Your branch is (.*) of"
-  if [[ ${git_status} =~ ${remote_pattern} ]]; then
-    if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
-      remote="↑"
-    else
-      remote="↓"
-    fi
-  else
-    remote=""
-  fi
-
-  diverge_pattern="# Your branch and (.*) have diverged"
-  if [[ ${git_status} =~ ${diverge_pattern} ]]; then
-    remote="↕"
-  fi
-
-  branch_pattern="^# On branch ([^${IFS}]*)"
-  if [[ ${git_status} =~ ${branch_pattern} ]]; then
-    branch=${BASH_REMATCH[1]}
-  fi
-  git_info="${WHITE}on ${git_info_style}[${branch}]${remote}${WHITE}"
-
-}
-
-set_prompt_symbol() {
-  if test $1 -eq 0 ; then
-    prompt_symbol="${WHITE}\$"
-  else
-    prompt_symbol="${RED}\$${WHITE}"
-  fi
-}
-
-# Customize Bash prompt
-build_prompt()  {
-  set_prompt_symbol $?
-  username="${CYAN}\\u"
-  at="${WHITE}@"
-  host="${ORANGE}\\h"
-  path="${BLUE}\\w"
-
-  if is_git_repo ; then
-   get_git_info
-  else
-    git_info=""
-  fi
-
-  PS1="\n$username$at$host${WHITE}: $path $git_info \n$prompt_symbol ${WHITE} "
-}
-
-PROMPT_COMMAND=build_prompt
