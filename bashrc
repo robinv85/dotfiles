@@ -83,37 +83,12 @@ function g {
   fi
 }
 
-alias ga='git add'
-alias gb='git branch'
-alias gc='git commit'
-alias gca='git commit -a'
-alias gcam='git commit -am'
-alias gcm='git commit -m'
-alias gcl='git clone'
-alias gco='git checkout'
-alias gcob='git checkout -b'
-alias gd='git diff'
-alias gf='git fetch'
-alias gl='git log'
-alias glg='git log --date-order --all --graph --format="%C(green)%h%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'
-#git log oneline, including author
-function glpn() {
+function glog() {
   git log --pretty=format:"%h %ai %an"$'\t'"%s" "$@" | expand
   echo ''
 }
-alias gm='git merge'
-alias gh='github'
-alias gi='vi .gitignore'
-alias gps='git push'
-alias gpso='git push origin'
-alias gpsom='git push origin master'
-alias gpl='git pull'
-alias gr='git remote'
-alias gs='git status'
-alias gsm='git submodule'
-alias gup='git fetch upstream && git merge upstream/master'
-alias gsup='git submodule sync && git submodule update --init'
 
+alias gh='github'
 
 # NPM
 # ---
@@ -137,3 +112,4 @@ function grin() {
 # Load .aliases
 # -------------
 source ~/.aliases
+

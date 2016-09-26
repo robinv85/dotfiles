@@ -1,0 +1,19 @@
+[alias]
+
+a = add
+b = branch
+c = commit
+cl = clone
+cm = commit -m
+co = checkout
+d = diff
+f = fetch
+l = log
+m = merge
+ps = push
+pl = pull
+r = remote
+s = status
+st = stash
+
+export = archive --format zip --output "export.zip"

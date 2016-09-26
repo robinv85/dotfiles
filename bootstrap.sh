@@ -7,6 +7,13 @@
 #
 ###############################
 
+# OS
+if [ "$(uname -s)" = "Darwin" ]; then
+    OS="OSX"
+else
+    OS=`uname -s`
+fi
+
 # Go to script location
 cd "$(dirname "${BASH_SOURCE[@]}")" || exit;
 
@@ -15,6 +22,8 @@ dir=$(pwd)
 
 # List of files & folders to symlink
 list="bashrc profile bash_profile bash_prompt osx editorconfig tmux.conf gitignore"
+
+#todo: separate config for osx (.osx) or (osx/)
 
 # Create symlinks
 link_dotfiles() {
