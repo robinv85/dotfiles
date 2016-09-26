@@ -32,6 +32,14 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
 
+# Start a local webserver with the built-in Python module
+function serve {
+  if [[ $# > 0 ]]; then
+    python -m SimpleHTTPServer "$@"
+  else
+    python -m SimpleHTTPServer
+  fi
+}
 
 # Changing directories
 # --------------------
