@@ -10,12 +10,12 @@
 # ----
 
 # Put rbenv in PATH if installed
-if [ -f ~/.rbenv ]; then
+if [ -d ~/.rbenv ]; then
   PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
 
-#put $HOME/bin and its subdirectories in PATH (ignores */.git/* so you can safely throw submodules in here):
+# Put $HOME/bin and its subdirectories in PATH (ignores */.git/* so you can safely throw submodules in here):
 if [[ -d ~/bin ]] ; then
     currentIFS=$IFS; IFS=$'\n'
 
