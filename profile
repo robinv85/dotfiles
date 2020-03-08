@@ -30,8 +30,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 export GOPATH=$HOME/go
-export GOROOT=$HOME/go
-PATH=$PATH:$GOROOT/bin
+PATH=$PATH:$GOPATH/bin
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home"
 
