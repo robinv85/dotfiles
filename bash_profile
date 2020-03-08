@@ -12,3 +12,5 @@ for file in ~/.{profile,bashrc,bash_prompt}; do
 done
 unset file
 
+export PATH="/usr/local/opt/protobuf@2.5/bin:$PATH"
+export PATH="/usr/local/opt/mongodb-community@4.0/bin:$PATH"
